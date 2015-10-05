@@ -1,0 +1,33 @@
+<ion-view view-title="{{vedio.name}}">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('{{photo}}{{vedio.image}}'); ">
+            <div class="content">
+                <div class="avatar" style="background-image: url('{{photo}}{{vedio.image}}');"></div>
+                <h3><a class="light">{{vedio.name}}</a></h3>
+                <h4>{{vedio.release_date}}</h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a class="tab-item"  ng-click="like(vedio.ID)">
+                <i class="icon ion-heart"></i> Like
+            </a>
+            <a   href="#/app/activity/{{vedio.ID}}" class="tab-item">
+                <i class="icon ion-ios-eye-outline"></i> View
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-share"></i> Share
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x"></h4>
+        <div class="list animate-fade-slide-in-right">
+            <p style="margin:5px;">
+             <strong>Name : -</strong> {{vedio.name}}.<br>
+             <strong>Release Date : -</strong> {{vedio.release_date}}.<br>
+             <strong>Description : -</strong> {{vedio.description}}.<br>
+                
+      
+    </p>
+            
+        </div>
+    </ion-content>
+</ion-view>

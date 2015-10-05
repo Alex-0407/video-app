@@ -1,0 +1,33 @@
+<ion-view view-title="Play">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+      
+            <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="{{photo}}{{vedio.image}}">
+    <h2>{{vedio.name}}</h2>
+    <p>Releasing on : {{vedio.release_date}}&nbsp;{{vedio.time}}</p>
+  </div>
+
+  <div class="item item-body">
+       <video ng-src="{{vid}}" class="centerme" controls="controls" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer"></video>
+    
+    <p>
+      {{vedio.description}}
+    </p>
+    <p>
+      <a href="#" class="subdued">{{views}} Views</a>
+      <a href="#" class="subdued">{{likes}} Likes</a>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#" ng-click="like(vedio.ID)">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+  </div>
+
+</div>
+    </ion-content>
+</ion-view>

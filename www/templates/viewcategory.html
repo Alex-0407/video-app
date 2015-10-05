@@ -1,0 +1,19 @@
+<ion-view view-title="{{catName.cat_name}}">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+            <ion-item ng-repeat="viewcategory in viewcategory" href="#/app/profile/{{viewcategory.ID}}">
+       <a class="item item-thumbnail-left" href="#/app/profile/{{viewcategory.ID}}">
+       <img src="{{photo}}{{viewcategory.image}}">
+       <h2>{{viewcategory.name}}</h2>
+       <p>Releasing on : {{viewcategory.release_date}}&nbsp;{{viewcategory.time}}</p>
+            <p>Place : {{viewcategory.venue}}</p>
+       </a>
+      </ion-item>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+
+
