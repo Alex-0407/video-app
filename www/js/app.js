@@ -83,19 +83,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material'])
         }
     })
 
-    .state('app.gallery', {
-        url: '/gallery',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/gallery.html',
-                controller: 'FriendsCtrl'
-            },
-            'fabContent': {
-                template: ''
-            }
-        }
-    })
-
     .state('app.profile', {
         url: '/profile/:vedioId',
         views: {
