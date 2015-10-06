@@ -6,7 +6,17 @@
              </div>
              <p class="item item-list-detail">
              <ion-scroll direction="x">
-             <img ng-repeat="allvedios in allvedios" ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb"/>
+             <img ng-repeat="allvedios in allvedios |orderBy:sortType:sortReverse | filter:code" ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb"/>
+             </ion-scroll>
+             </p>
+             <br><br>
+              <div class="item item-divider">
+             <i class="ion-images"></i>
+             Marathi Movies
+             </div>
+             <p class="item item-list-detail">
+             <ion-scroll direction="x">
+             <img ng-repeat="allvedios in allvedios |orderBy:sortType:sortReverse | filter:code2" ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb"/>
              </ion-scroll>
              </p>
              <br><br>

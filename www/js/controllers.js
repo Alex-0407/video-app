@@ -108,6 +108,7 @@ angular.module('starter.controllers', [])
     $scope.allvedios=data.allvedios;
     $scope.allcategories=data.allcategories;
        $scope.code = 'NAT';
+        $scope.code2 = 'MMV';
         $scope.photo = $sce.trustAsResourceUrl('http://humarimandi.com/api/images/');
     });
     $timeout(function() {
