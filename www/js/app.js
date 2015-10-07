@@ -84,11 +84,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material'])
     })
 
     .state('app.gallery', {
-        url: '/gallery',
+        url: '/gallery/:categoryid',
         views: {
             'menuContent': {
                 templateUrl: 'templates/gallery.html',
-                controller: 'FriendsCtrl'
+                controller: 'ViewCategoriesCtrl'
             },
             'fabContent': {
                 template: ''
