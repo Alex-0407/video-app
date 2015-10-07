@@ -1,16 +1,14 @@
 <ion-view view-title="Vedio Application Name">
     <ion-content ng-class="{expanded:isExpanded}">
        <div class="card-wrapper" ng-repeat="allvedios in allvedios" >
-    <div class="card custom-card">
-      
+    <div class="card custom-card">    
         <ion-list>
-         
-           <h2>{{allvedios.image}}</h2>      
-          <img  ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb2"/>
-         
-        </ion-list>
-     
-    </div>
-  </div>
+           <div class="img">
+                <img  ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb2"/>
+               <div class="desc"><strong>{{allvedios.name}}</strong><br>{{allvedios.release_date}}</div>
+                </div>
+             </ion-list>
+           </div>
+        </div>
     </ion-content>
 </ion-view>
