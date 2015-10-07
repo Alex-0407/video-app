@@ -97,6 +97,14 @@ p {
     padding: 5px;
     border: 1px solid #ffffff;
 }
+.img2 {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    width: 45%;
+    height: auto;
+    float: left;
+}
 
 .img img {
     display: inline;

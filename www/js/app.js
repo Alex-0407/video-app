@@ -94,6 +94,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material'])
                 template: ''
             }
         }
+    })  
+    .state('app.events', {
+        url: '/events',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/events.html',
+                controller: 'ViewCategoriesCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })
+.state('app.movies', {
+        url: '/movies/:categoryid',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/movies.html',
+                controller: 'ViewCategoriesCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
     })
 
     .state('app.profile', {

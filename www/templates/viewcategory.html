@@ -1,5 +1,36 @@
-<ion-view view-title="{{catName.cat_name}}">
-    <ion-content ng-class="{expanded:isExpanded}">
+<ion-view view-title="Vedio App Name">
+   <ion-content ng-class="{expanded:isExpanded}">
+ <div class="item item-divider">
+             <i class="ion-images"></i>
+             Marathi Natak
+             </div>
+       <div class="card-wrapper" ng-repeat="viewcategory in viewcategory" >
+    <div class="card custom-card">         
+        <ion-list>
+           <div class="img">
+                <img  ng-src="{{photo}}{{viewcategory.image}}"  ui-sref="app.profile({vedioId : viewcategory.ID})" class="image-list-thumb2"/>
+               <div class="desc"><strong>{{viewcategory.name}}</strong><br>Releasing on : {{viewcategory.release_date}}&nbsp;{{viewcategory.time}}</div>
+                </div>
+             </ion-list>
+           </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  <ion-content ng-class="{expanded:isExpanded}">
         <div class="content has-header">
             <ion-item ng-repeat="viewcategory in viewcategory" href="#/app/profile/{{viewcategory.ID}}">
        <a class="item item-thumbnail-left" href="#/app/profile/{{viewcategory.ID}}">
@@ -10,9 +41,7 @@
        </a>
       </ion-item>
         </div>
-    </ion-content>
-</ion-view>
-
+    </ion-content>-->
 
 
 

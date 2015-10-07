@@ -94,6 +94,7 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
+   
 
 .controller('FriendsCtrl', function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce) {
     // Set Header

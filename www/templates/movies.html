@@ -2,14 +2,14 @@
     <ion-content ng-class="{expanded:isExpanded}">
  <div class="item item-divider">
              <i class="ion-images"></i>
-             Bollywood Movies
+             Marathi Movies
              </div>
        <div class="card-wrapper" ng-repeat="viewcategory in viewcategory" >
-    <div class="card custom-card">         
-        <ion-list>
-           <div class="img">
+    <div class="card custom-card img2">         
+        <ion-list >
+           <div >
                 <img  ng-src="{{photo}}{{viewcategory.image}}"  ui-sref="app.profile({vedioId : viewcategory.ID})" class="image-list-thumb2"/>
-               <div class="desc"><strong>{{viewcategory.name}}</strong><br>Releasing on : {{viewcategory.release_date}}&nbsp;{{viewcategory.time}}</div>
+               <div class="desc"><strong>{{viewcategory.name}}</strong><br>Releasing on : {{viewcategory.release_date}}&nbsp;<br>{{viewcategory.time}}</div>
                 </div>
              </ion-list>
            </div>
