@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material'])
         views: {
             'menuContent': {
                 templateUrl: 'templates/events.html',
-                controller: 'ViewCategoriesCtrl'
+                controller: 'EventCtrl'
             },
             'fabContent': {
                 template: ''
