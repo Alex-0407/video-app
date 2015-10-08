@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-.controller('EventCtrl', function($scope,$state, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,  $cordovaImagePicker) {
+.controller('EventCtrl', function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce) {
      $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
