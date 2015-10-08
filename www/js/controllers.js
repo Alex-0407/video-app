@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-.controller('EventCtrl', function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce) {
+.controller('EventCtrl', function($scope,$state, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,  $cordovaImagePicker) {
      $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
@@ -108,7 +108,12 @@ angular.module('starter.controllers', [])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
-
+$http.get('http://humarimandi.com/api/index.php/vedio/getAllEvents')
+    .success(function(data){
+    $scope.AllEvents=data.getAllEvents;
+   
+        $scope.photo = $sce.trustAsResourceUrl('http://humarimandi.com/api/images/');
+    });
 })
    
 
