@@ -1,5 +1,8 @@
 {
     "jscodehints.detectedExclusions": [
-        "C:/wamp/www/vedio_project/demo/www/lib/ionic-material/dist/ionic.material.min.js"
+        "C:/wamp/www/vedio_project/demo/www/lib/ionic-material/dist/ionic.material.min.js",
+        "C:/wamp/www/vedio_project/git/video-app/www/lib/waves/Gruntfile.js",
+        "C:/wamp/www/vedio_project/git/video-app/www/lib/waves/src/js/waves.js",
+        "C:/wamp/www/vedio_project/git/video-app/www/lib/waves/docs/static/snarl.min.js"
     ]
 }

@@ -112,13 +112,20 @@ angular.module('starter.controllers', [])
 })
    
 
-.controller('FriendsCtrl', function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce) {
+.controller('FriendsCtrl', function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$ionicLoading) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
 
     // Delay expansion
+     $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
     
     $http.get('http://humarimandi.com/api/index.php/vedio/getAllVedio')
     .success(function(data){
@@ -131,7 +138,8 @@ angular.module('starter.controllers', [])
     $timeout(function() {
         $scope.isExpanded = true;
         $scope.$parent.setExpanded(true);
-    }, 300);
+         $ionicLoading.hide();
+    }, 3000);
 
     // Set Motion
     ionicMaterialMotion.fadeSlideInRight();
