@@ -1,55 +1,22 @@
 <ion-view view-title="Vedio App Name">
-    <ion-content ng-class="{expanded:$scope.isExpanded}">
-        <div class="item item-divider">
+    <ion-content ng-class="{expanded:isExpanded}">
+ <div class="item item-divider">
              <i class="ion-images"></i>
-             Event Registration Form
+             Events
              </div>
-   <div class="list">
-     
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Event Category</span>
-    <input type="text" placeholder="Event Category" name="category">
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Event Title</span>
-    <input type="text" placeholder="Event Title" name="title">
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Start Date</span>
-    <input type="text" placeholder="Start Date" name="start">
-  </label>
-    <label class="item item-input item-floating-label">
-    <span class="input-label">End Date</span>    
-    <input type="text" placeholder="End Date" name="end">
-  </label>
-    <label class="item item-input item-floating-label">
-    <span class="input-label">Details</span>    
-    <input type="text" placeholder="Details 200 words" name="details">
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">City</span>    
-    <input type="text" placeholder="Event City" name="city">
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Venue Name</span>    
-    <input type="text" placeholder="Venue Name" name="venuename">
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Venue Area</span>    
-    <input type="text" placeholder="Venue Area" name="venuearea">
-  </label>
-   <label class="item item-input item-floating-label">
-    <span class="input-label">Address Details</span>    
-    <input type="text" placeholder="Address Details" name="add_details">
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Select Images</span>    
-    <input type="file" placeholder="Address Details" name="file">
-  </label>
-  
-</div>       
-       
-</div>
-       
+        <div class="button-bar">
+                    <a class="button" ng-click="uploadPicture()">Register Event</a>
+                    
+                </div>
+       <div class="card-wrapper" ng-repeat="AllEvents in AllEvents" >
+    <div class="card custom-card img2">         
+        <ion-list >
+           <div >
+                <img  ng-src="{{photo}}{{AllEvents.image}}"  class="image-list-thumb2"/>
+               <div class="desc"><strong>{{AllEvents.organiser_name}}</strong><strong>{{AllEvents.title}}</strong><br>Releasing on : {{AllEvents.start}}&nbsp;<br>{{AllEvents.end}}<br>{{AllEvents.details}}</div>
+                </div>
+             </ion-list>
+           </div>
+        </div>
     </ion-content>
 </ion-view>

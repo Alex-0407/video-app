@@ -1,14 +1,27 @@
 <ion-view view-title="Vedio Application Name">
+<<<<<<< HEAD
     <ion-content >
+=======
+    <ion-content ng-class="{expanded:isExpanded}">
+        
+>>>>>>> 7e1c06e3df0b9a3590d8102384c6868548b3bb21
        <div class="item item-divider">
              <i class="ion-images"></i>
              Marathi Natak       
              </div>
+<<<<<<< HEAD
             <div class="button-bar" id="btn-head">
   <a class="button button-stable">Latest</a>
   <a class="button button-stable">Next Change</a>
   <a class="button button-stable">Upcoming</a>
 </div>
+=======
+        <div class="button-bar">
+          <a class="button button-calm">Upcoming</a>
+          <a class="button button-calm">Latest</a>
+          <a class="button button-calm">New</a>
+        </div>
+>>>>>>> 7e1c06e3df0b9a3590d8102384c6868548b3bb21
              <p class="item item-list-detail">
              <ion-scroll direction="x">
              <img ng-repeat="allvedios in allvedios |orderBy:sortType:sortReverse | filter:code" ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb"/>
