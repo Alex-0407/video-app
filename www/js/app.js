@@ -106,6 +106,18 @@ angular.module('starter', ['ngCordova','ionic','starter.controllers', 'ionic-mat
                 template: ''
             }
         }
+    }) 
+     .state('app.addevents', {
+        url: '/addevents',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/addevents.html',
+                controller: 'EventCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
     })
 .state('app.movies', {
         url: '/movies/:categoryid',

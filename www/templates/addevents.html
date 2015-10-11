@@ -1,0 +1,88 @@
+<ion-view view-title="Vedio App Name">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="item item-divider">
+             <i class="ion-images"></i>
+             Event Registration Form
+             </div>
+   <div class="list">
+     <form name="UserForm">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Event Category</span>
+    <input type="text" placeholder="Event Category" name="category" ng-model="data.category">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Event Title</span>
+    <input type="text" placeholder="Event Title" name="title" ng-model="data.title">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Start Date</span>
+    <input type="text" placeholder="Start Date" name="start" ng-model="data.start">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">End Date</span>    
+    <input type="text" placeholder="End Date" name="end" ng-model="data.end">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">Details</span>    
+    <input type="text" placeholder="Details 200 words" name="details" ng-model="data.details">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">City</span>    
+    <input type="text" placeholder="Event City" name="city" ng-model="data.city">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Venue Name</span>    
+    <input type="text" placeholder="Venue Name" name="venuename" ng-model="data.venuename">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Venue Area</span>    
+    <input type="text" placeholder="Venue Area" name="venuearea" ng-model="data.venuearea">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Address Details</span>    
+    <input type="text" placeholder="Address Details" name="add_details" ng-model="data.add_details">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">Organised By</span>    
+    <input type="text" placeholder="Organised By" name="Organised_By" ng-model="data.Organised_By">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">Organised Contact Number</span>    
+    <input type="text" placeholder="Organised Contact Number" name="Organised_Contact" ng-model="data.Organised_Contact">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Organised Email</span>    
+    <input type="text" placeholder="Organised Email" name="Organised_Email" ng-model="data.Organised_Email">
+  </label>
+       <label class="item item-input item-floating-label">
+    <span class="input-label">Event is</span>    
+    <input type="Email" placeholder="Event is" name="Event_is" ng-model="data.Event_is">
+  </label>
+  
+     <label class="item item-input item-floating-label">
+    <span class="input-label">Organiser Address</span>    
+    <input type="Email" placeholder="Organiser Address" name="Organiser_Address" ng-model="data.Organiser_Address">
+  </label>
+    
+ 
+    <label class="item item-input item-floating-label">
+    <span class="input-label">Organiser Website</span>    
+    <input type="text" placeholder="Organiser Webiste" name="Organiser_Website" ng-model="data.Organiser_Website">
+  </label>
+         <div ng-show="error" class="list">
+        <div class=" padding assertive">
+          <ion-pane  >
+            {{error_msg}}
+          </ion-pane>
+        </div>
+      </div>
+  <button class="button button-block button-dark" ng-click="register(data)" type="submit" >
+        Register
+      </button> </form>
+  
+</div>       
+       
+</div>
+       
+    </ion-content>
+</ion-view>

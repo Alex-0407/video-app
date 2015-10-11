@@ -126,3 +126,7 @@ p {
 {
     padding: 10px;
 }
+#btn-text
+{
+    text-transform:none; 
+}

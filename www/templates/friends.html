@@ -1,30 +1,38 @@
 <ion-view view-title="Vedio Application Name">
-<<<<<<< HEAD
+     <ion-nav-buttons side="right">
+                <button class="button ion-android-notifications button-clear ion-android-more-vertical"></button>
+
+  <button class="button button-icon icon ion-android-search flat pull-right" ng-click="carr()" ></button>
+                
+                    
+                
+            </ion-nav-buttons>
     <ion-content >
-=======
-    <ion-content ng-class="{expanded:isExpanded}">
-        
->>>>>>> 7e1c06e3df0b9a3590d8102384c6868548b3bb21
+
+          <div class="bar bar-header item-input-inset" ng-show="showstartCard">
+  <label class="item-input-wrapper" >
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="Search" ng-model="search.data">
+  </label>
+ 
+</div>
+        <div class="home" ng-show="mainscreen">
        <div class="item item-divider">
              <i class="ion-images"></i>
              Marathi Natak       
              </div>
-<<<<<<< HEAD
+
             <div class="button-bar" id="btn-head">
-  <a class="button button-stable">Latest</a>
-  <a class="button button-stable">Next Change</a>
-  <a class="button button-stable">Upcoming</a>
+  <a class="button button-stable" ng-click="t1()"><span id="btn-text">Latest</span></a>
+  <a class="button button-stable" ng-click="t2()"><span id="btn-text">Next Change</span></a>
+  <a class="button button-stable" ng-click="t3()"><span id="btn-text">Upcoming</span></a>
 </div>
-=======
-        <div class="button-bar">
-          <a class="button button-calm">Upcoming</a>
-          <a class="button button-calm">Latest</a>
-          <a class="button button-calm">New</a>
-        </div>
->>>>>>> 7e1c06e3df0b9a3590d8102384c6868548b3bb21
+
+        
+
              <p class="item item-list-detail">
              <ion-scroll direction="x">
-             <img ng-repeat="allvedios in allvedios |orderBy:sortType:sortReverse | filter:code" ng-src="{{photo}}{{allvedios.image}}"  ui-sref="app.profile({vedioId : allvedios.ID})" class="image-list-thumb"/>
+             <img ng-repeat="allnatak in allnatak |orderBy:sortType:sortReverse" ng-src="{{photo}}{{allnatak.image}}"  ui-sref="app.profile({vedioId : allnatak.ID})" class="image-list-thumb"/>
              </ion-scroll>
              </p>
              <br><br>
@@ -38,5 +46,18 @@
              </ion-scroll>
              </p>
              <br><br>
+            </div>
+        <div class="search_data" ng-show="searchdata">
+       <div class="list" ng-repeat="allvedios in allvedios | filter:search.data">
+
+    <a class="item item-avatar" href="#" ui-sref="app.profile({vedioId : allvedios.ID})">
+      <img ng-src="{{photo}}{{allvedios.image}}">
+      <h2>{{allvedios.name}}</h2>
+      <p>Releasing on : {{allvedios.release_date}}&nbsp;{{allvedios.time}}</p>
+      <p>Searched in : {{allvedios.cat_name}}</p>
+    </a>
+
+</div>
+        </div>
     </ion-content>
 </ion-view>

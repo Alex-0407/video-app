@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-.controller('EventCtrl',function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$cordovaFileTransfer, $ionicLoading,$cordovaCapture) {
+.controller('EventCtrl',function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$cordovaFileTransfer, $ionicLoading) {
      $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
@@ -114,22 +114,14 @@ $http.get('http://humarimandi.com/api/index.php/vedio/getAllEvents')
    
         $scope.photo = $sce.trustAsResourceUrl('http://humarimandi.com/api/images/');
     });
-    $scope.uploadPicture= function(){
-     window.imagePicker.getPictures(
-			function(results) {
-				for (var i = 0; i < results.length; i++) {
-					console.log('Image URI: ' + results[i]);
-					$scope.images.push(results[i]);
-				}
-				if(!$scope.$$phase) {
-					$scope.$apply();
-				}
-			}, function (error) {
-				console.log('Error: ' + error);
-			}
-		);
+ $scope.register =function(data){
+    console.log(data);
+             $http.post("http://humarimandi.com/api/index.php/vedio/addevents",data).success(function(data) {
 
-    }
+            $scope.response = data; console.log(data);
+       
+        }) }
+   
 })
    
 
@@ -138,7 +130,16 @@ $http.get('http://humarimandi.com/api/index.php/vedio/getAllEvents')
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
-
+    $scope.showstartCard = false;
+    $scope.mainscreen = true;
+    $scope.searchdata = false;
+    $scope.carr = function()
+    {
+       $scope.showstartCard = true;
+       $scope.mainscreen = false;
+       $scope.searchdata = true;
+    }
+  
     // Delay expansion
      $ionicLoading.show({
     content: 'Loading',
@@ -147,15 +148,61 @@ $http.get('http://humarimandi.com/api/index.php/vedio/getAllEvents')
     maxWidth: 200,
     showDelay: 0
   });
-    
+     $scope.photo = $sce.trustAsResourceUrl('http://humarimandi.com/api/images/');
     $http.get('http://humarimandi.com/api/index.php/vedio/getAllVedio')
     .success(function(data){
     $scope.allvedios=data.allvedios;
     $scope.allcategories=data.allcategories;
        $scope.code = 'NAT';
         $scope.code2 = 'MMV';
-        $scope.photo = $sce.trustAsResourceUrl('http://humarimandi.com/api/images/');
+      
+    }); 
+    $http.get('http://humarimandi.com/api/index.php/vedio/getMarathiNataktype1')
+    .success(function(data){
+    $scope.allnatak=data.allvedios;
     });
+    $scope.t1 = function()
+    {
+        $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+    $http.get('http://humarimandi.com/api/index.php/vedio/getMarathiNataktype1')
+    .success(function(data){$ionicLoading.hide();
+    $scope.allnatak=data.allvedios;
+    });
+    }
+    $scope.t2 = function()
+    {$ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+        $http.get('http://humarimandi.com/api/index.php/vedio/getMarathiNataktype2')
+    .success(function(data){$ionicLoading.hide();
+    $scope.allnatak=data.allvedios;
+    });
+    }
+    $scope.t3 = function()
+    {
+    $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+        $http.get('http://humarimandi.com/api/index.php/vedio/getMarathiNataktype3')
+    .success(function(data){ $ionicLoading.hide();
+    $scope.allnatak=data.allvedios;
+    });
+    }
+    
     $timeout(function() {
         $scope.isExpanded = true;
         $scope.$parent.setExpanded(true);
@@ -168,6 +215,9 @@ $http.get('http://humarimandi.com/api/index.php/vedio/getAllEvents')
     // Set Ink
     ionicMaterialInk.displayEffect();
 })
+
+
+
 
 .controller('ViewCategoriesCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion,$http,$sce, ionicMaterialInk) {
     
