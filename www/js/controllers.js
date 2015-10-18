@@ -94,10 +94,17 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-.controller('EventCtrl',function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$cordovaFileTransfer, $ionicLoading) {
+.controller('EventCtrl',function($scope, $http,$stateParams, $ionicPopup,$timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$cordovaFileTransfer, $ionicLoading) {
      $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
+    
+    
+     $scope.authorization = {
+    username: '',
+    password : ''    
+  };  
+  
      $timeout(function() {
         $scope.isExpanded = true;
         $scope.$parent.setExpanded(true);
