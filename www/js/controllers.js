@@ -101,9 +101,42 @@ angular.module('starter.controllers', [])
     
     
      $scope.authorization = {
-    username: '',
-    password : ''    
-  };  
+                category: '',
+                title: '',
+                start:'',
+                end: '',
+                details:'',
+                city: '',
+                venuename:'',
+                venuearea: '',
+                add_details: '',
+                organiser_name: '',
+                organiser_Contact: '',               
+                image: ''              
+                  
+  };
+       $scope.signIn = function() {console.log('Doing login', $scope.authorization);
+                           
+    $http.post('http://humarimandi.com/api/index.php/vedio/addevents', {
+                category: $scope.authorization.category,
+                title: $scope.authorization.title,
+                start: $scope.authorization.start,
+                end: $scope.authorization.end,
+                details: $scope.authorization.details,
+                city: $scope.authorization.city,
+                venuename: $scope.authorization.venuename,
+                venuearea: $scope.authorization.venuearea,
+                add_details: $scope.authorization.add_details,
+                organiser_name: $scope.authorization.organiser_name,
+                organiser_Contact: $scope.authorization.organiser_Contact,               
+                image: $scope.authorization.image               
+                
+            })
+    .success(function(data){
+   console.log('Doing login', data);
+    });     
+   
+     }
   
      $timeout(function() {
         $scope.isExpanded = true;

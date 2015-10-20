@@ -4,41 +4,126 @@
              <i class="ion-images"></i>
              Event Registration Form
              </div>
-  <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)">
+  <form name="authorizationForm" novalidate="" ng-submit="signIn()">
  
   <div class="list">
- 
-    <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.username.$invalid, 'no-errors' : authorizationForm.username.$valid}">
-      <span class="input-label">Username</span>
-      <input type="text" name="username" ng-model="authorization.username" ng-minlength="5" ng-maxlength="20" required>
+    <!--start with tag-->
+    <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.category.$invalid, 'no-errors' : authorizationForm.category.$valid}">
+      <span class="input-label">Category</span>
+        <select ng-model="authorization.category" required>
+        <option value="" disabled>Select</option>
+        <option value="Event">Event</option>
+        </select>
     </label>
  
-    <div class="error-container" ng-show="authorizationForm.username.$error" ng-messages="authorizationForm.username.$error">
+    <div class="error-container" ng-show="authorizationForm.category.$error" ng-messages="authorizationForm.category.$error">
       <div ng-messages-include="error-list.html"></div>
     </div>
- 
-    <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.password.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
-      <span class="input-label">Password</span>
-      <input type="password" name="password" ng-model="authorization.password" ng-minlength="5" ng-maxlength="20" required>
+      <!--end with tag-->
+       <!--start with tag-->
+    <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.title.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.title.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">title</span>
+      <input type="text" name="title" ng-model="authorization.title" ng-minlength="5" ng-maxlength="20" required>
     </label>
  
-    <div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
+    <div class="error-container last-error-container" ng-show="authorizationForm.title.$error && authorizationForm.$submitted" ng-messages="authorizationForm.title.$error">
       <div ng-messages-include="error-list.html"></div>
     </div>
-      
-      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.password.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.start.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.start.$valid  && authorizationForm.$submitted}">
       <span class="input-label">Start Date</span>
-      <input type="date" name="start_date" ng-model="authorization.start_date" required>
+      <input type="date" name="start" ng-model="authorization.start" required>
     </label>
  
-    <div class="error-container last-error-container" ng-show="authorizationForm.start_date.$error && authorizationForm.$submitted" ng-messages="authorizationForm.start_date.$error">
+    <div class="error-container last-error-container" ng-show="authorizationForm.start.$error && authorizationForm.$submitted" ng-messages="authorizationForm.start.$error">
       <div ng-messages-include="error-list.html"></div>
     </div>
+      <!--end with tag-->
+       <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.end.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.end.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">End Date</span>
+      <input type="date" name="end" ng-model="authorization.end" required>
+    </label>
  
+    <div class="error-container last-error-container" ng-show="authorizationForm.end.$error && authorizationForm.$submitted" ng-messages="authorizationForm.start.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.details.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.details.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">End Date</span>
+      <input type="text" name="details" ng-model="authorization.details" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.details.$error && authorizationForm.$submitted" ng-messages="authorizationForm.details.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.city.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.city.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">City</span>
+      <input type="text" name="city" ng-model="authorization.city" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.city.$error && authorizationForm.$submitted" ng-messages="authorizationForm.city.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.venuename.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.venuename.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">Venue Name</span>
+      <input type="text" name="venuename" ng-model="authorization.venuename" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.venuename.$error && authorizationForm.$submitted" ng-messages="authorizationForm.venuename.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.venuearea.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.venuearea.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">Venue Area</span>
+      <input type="text" name="venuearea" ng-model="authorization.venuearea" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.venuearea.$error && authorizationForm.$submitted" ng-messages="authorizationForm.venuearea.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.add_details.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.add_details.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">Details</span>
+      <input type="text" name="add_details" ng-model="authorization.add_details" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.add_details.$error && authorizationForm.$submitted" ng-messages="authorizationForm.add_details.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.organiser_name.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.organiser_name.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">Organiser Name</span>
+      <input type="text" name="organiser_name" ng-model="authorization.organiser_name" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.organiser_name.$error && authorizationForm.$submitted" ng-messages="authorizationForm.organiser_name.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
+        <!--start with tag-->
+      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.organiser_Contact.$invalid  && authorizationForm.$submitted, 'no-errors' : authorizationForm.organiser_Contact.$valid  && authorizationForm.$submitted}">
+      <span class="input-label">Organiser Contact</span>
+      <input type="text" name="organiser_Contact" ng-model="authorization.organiser_Contact" required>
+    </label>
+ 
+    <div class="error-container last-error-container" ng-show="authorizationForm.organiser_Contact.$error && authorizationForm.$submitted" ng-messages="authorizationForm.organiser_Contact.$error">
+      <div ng-messages-include="error-list.html"></div>
+    </div>
+      <!--end with tag-->
   </div>
  
   <button class="button button-full button-positive" type="submit">
-    Sign In
+    Register
   </button>
  
 </form>
