@@ -37,7 +37,16 @@ angular.module('starter', ['ngCordova','ionic','starter.controllers', 'ionic-mat
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
     })
-
+    
+.state('insert-image', {
+      url: '/insert-image',
+     views: {
+            'menuContent': {
+      templateUrl: 'templates/insert-image.html',        
+      controller: 'EventCtrl'
+            }
+     }
+    })
     .state('app.activity', {
         url: '/activity/:vedioId',
         views: {

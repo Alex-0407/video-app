@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-.controller('EventCtrl',function($scope, $http,$stateParams, $ionicPopup,$timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$cordovaFileTransfer, $ionicLoading) {
+.controller('EventCtrl',function($scope, $http,$stateParams, $ionicPopup,$timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$cordovaFileTransfer, $ionicLoading,$state) {
      $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
@@ -115,7 +115,41 @@ angular.module('starter.controllers', [])
                 image: ''              
                   
   };
-       $scope.signIn = function() {console.log('Doing login', $scope.authorization);
+    $scope.imgupld = function()
+    {
+               
+            $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+           //console.log('Doing login', $scope.authorization);
+      $.ajax({
+        type: 'POST',
+        url: '/Cart/remove_item/'+res_id+'/'+id,
+        success: function(return_data){
+//console.log(return_data);
+            var data=JSON.parse(return_data);
+// console.log(data);
+            if(mob==0)
+                show_cart(data);
+                else
+                    show_mobile_cart(data);
+        }
+    });
+    }
+       $scope.signIn = function() {
+           
+            $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+           //console.log('Doing login', $scope.authorization);
                            
     $http.post('http://humarimandi.com/api/index.php/vedio/addevents', {
                 category: $scope.authorization.category,
@@ -128,15 +162,25 @@ angular.module('starter.controllers', [])
                 venuearea: $scope.authorization.venuearea,
                 add_details: $scope.authorization.add_details,
                 organiser_name: $scope.authorization.organiser_name,
-                organiser_Contact: $scope.authorization.organiser_Contact,               
-                image: $scope.authorization.image               
+                organiser_Contact: $scope.authorization.organiser_Contact
                 
             })
     .success(function(data){
-   console.log('Doing login', data);
+         $ionicLoading.hide();
+   
+       var alertPopup =  $ionicPopup.alert({
+       title: 'Success',
+       template: 'Event Inserted Successfully'
+     });
+ 
+   alertPopup.then(function(res) {
+   $scope.insert_id = data;
+       $state.go('insert-image')
+   });
     });     
    
      }
+   
   
      $timeout(function() {
         $scope.isExpanded = true;
@@ -164,7 +208,9 @@ $http.get('http://humarimandi.com/api/index.php/vedio/getAllEvents')
    
 })
    
-
+.controller('CropImgCtrl', function($scope, $stateParams) {
+  $scope.imagestring = decodeURIComponent($stateParams.imageURI);
+})
 .controller('FriendsCtrl', function($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$sce,$ionicLoading) {
     // Set Header
     $scope.$parent.showHeader();
